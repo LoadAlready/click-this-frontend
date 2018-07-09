@@ -9,7 +9,7 @@ function createGrid(gridSize) {
   let cellId = 1;
   for (var rowCounter = 0; rowCounter < gridSize; rowCounter++) {
     const row  = document.createElement("tr");
-    row.id = rowCounter + 1;
+    row.dataset.rowId = rowCounter + 1;
     grid.append(row);
     for (var cellCounter = 0; cellCounter < gridSize; cellCounter++) {
       const cell = document.createElement("td");
@@ -18,5 +18,6 @@ function createGrid(gridSize) {
     }
   }
 }
+
 
 createGrid(10);

@@ -4,7 +4,10 @@
     cursor:pointer;
     width:5em;
     height:5em;
-    border:1px solid #ccc;
     text-align:center;
     font-family:sans-serif; font-size:13px
+}
+
+.active {
+  background-color: red;
 }

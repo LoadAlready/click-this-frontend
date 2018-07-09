@@ -1,12 +1,8 @@
-// function a(){
-//   console.log('hi')
-// }
-//
-// a()
 function generateRandomNumberBetweenOneAndCellCount() {
   return Math.floor(Math.random() * (cellCount - 1 + 1)) + 1;
 }
 
+let currentScore = document.getElementById('current-score');
 let currentCellId;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
   startButton.innerText = "Start Game";
   startButton.id = "start-button";
   gameOptions.append(startButton);
-  startButton.addEventListener("click", startGame)
+  startButton.addEventListener("click", handleChoosingNextCell)
 
 
-  function startGame() {
+  function handleChoosingNextCell() {
     const activeCellId = generateRandomNumberBetweenOneAndCellCount();
     selectAndStyleActiveCell(activeCellId);
 
@@ -27,6 +23,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function selectAndStyleActiveCell(activeCellId) {
     const activeCell = document.getElementById(activeCellId);
-    activeCell.innerText = `${activeCellId}`;
+    activeCell.className = 'active'
+    currentCellId = activeCellId
   }
+
+  gridContainer.addEventListener('click', respondToUserClick)
+
+  function respondToUserClick(){
+    if(parseInt(event.target.id) === currentCellId){
+      currentScore.innerText++
+      const activeCell = document.getElementById(currentCellId);
+      activeCell.className = ""
+      handleChoosingNextCell()
+    }
+
+  }
+
+
 })
