@@ -3,6 +3,11 @@
 // }
 //
 // a()
+function generateRandomNumberBetweenOneAndCellCount() {
+  return Math.floor(Math.random() * (cellCount - 1 + 1)) + 1;
+}
+
+let currentCellId;
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -15,7 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   function startGame() {
-    const randomCell = Math.floor(Math.random() * (cellCount - 1 + 1)) + 1;
-    debugger; 
+    const activeCellId = generateRandomNumberBetweenOneAndCellCount();
+    selectAndStyleActiveCell(activeCellId);
+
+  }
+
+  function selectAndStyleActiveCell(activeCellId) {
+    const activeCell = document.getElementById(activeCellId);
+    activeCell.innerText = `${activeCellId}`;
   }
 })
