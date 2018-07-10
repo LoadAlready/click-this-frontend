@@ -1,6 +1,13 @@
 function generateRandomNumberBetweenOneAndCellCount() {
   return Math.floor(Math.random() * (cellCount - 1 + 1)) + 1;
 }
+function clearGridForNewGame(){
+  const activeCell = document.getElementById(currentCellId);
+  activeCell.className = ""
+}
+function clearScoreForNewGame(){
+  currentScore.innerText = 0
+}
 
 let currentScore = document.getElementById('current-score');
 let currentCellId;
@@ -23,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function selectAndStyleActiveCell(activeCellId) {
     const activeCell = document.getElementById(activeCellId);
-    activeCell.className = 'active'
+    activeCell.className = 'pulse'
     currentCellId = activeCellId
   }
 
@@ -35,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
       const activeCell = document.getElementById(currentCellId);
       activeCell.className = ""
       handleChoosingNextCell()
+    }else {
+      alert(`You lost the game. Your score is ${currentScore.innerText}.`)
+      clearGridForNewGame()
+      clearScoreForNewGame()
+
     }
 
   }
