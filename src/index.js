@@ -14,12 +14,20 @@ let currentCellId;
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  let gameOptions = document.getElementById("game-options");
-  let startButton = document.createElement("BUTTON");
-  startButton.innerText = "Start Game";
-  startButton.id = "start-button";
-  gameOptions.append(startButton);
-  startButton.addEventListener("click", handleChoosingNextCell)
+  (function initializeGame(){
+
+    let gameOptions = document.getElementById("game-options");
+    let startButton = document.createElement("BUTTON");
+    let usernameInputField = document.createElement("INPUT")
+    usernameInputField.placeholder = "New User"
+    gameOptions.append(usernameInputField)
+    startButton.innerText = "Start Game";
+    startButton.id = "start-button";
+    gameOptions.append(startButton);
+    startButton.addEventListener("click", handleChoosingNextCell)
+
+  })()
+
 
 
   function handleChoosingNextCell() {
@@ -43,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
       activeCell.className = ""
       handleChoosingNextCell()
     }else {
+
       alert(`You lost the game. Your score is ${currentScore.innerText}.`)
       clearGridForNewGame()
       clearScoreForNewGame()

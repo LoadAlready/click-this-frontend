@@ -4,6 +4,7 @@
   border-style: solid;
   border-color: black;
   border-width: thin;
+  /* background-color: white; */
 }
 
 .grid td {
@@ -17,6 +18,11 @@
 
 .active {
   background-color: red;
+}
+
+
+.main {
+  /* background: radial-gradient(ellipse at center, #7d7e7d 0%,#0e0e0e 100%); */
 }
 
 /* .pulse {
