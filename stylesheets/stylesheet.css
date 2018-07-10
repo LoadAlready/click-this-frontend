@@ -1,5 +1,5 @@
 .grid {
-  margin:1em auto;
+  margin:5% auto;
   border-collapse:collapse ;
   border-style: solid;
   border-color: black;
@@ -8,9 +8,8 @@
 }
 
 .grid td {
-    cursor:pointer;
-    width:5em;
-    height:5em;
+    width: 4em;
+    height: 4em;
     text-align:center;
     font-family:sans-serif; font-size:13px;
     border-radius: 5em;
@@ -43,14 +42,12 @@
   height: 22px;
   border-radius: 50%;
   background: radial-gradient(#9EBEFD 5%, #B6FE94 15%, white 60%);
-  cursor: none;
   box-shadow: 0 0 0 rgba(204,169,44, 0.4);
   animation: pulse .5s infinite;
 }
 
 .pulse:hover {
   animation: pulse .5s infinite;
-  cursor: none;
 }
 
 @-webkit-keyframes pulse {
@@ -77,4 +74,8 @@
       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
+}
+
+.hide-cursor {
+    cursor: none;
 }

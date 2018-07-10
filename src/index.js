@@ -11,6 +11,7 @@ function clearScoreForNewGame(){
 
 let currentScore = document.getElementById('current-score');
 let currentCellId;
+let timerInterval;
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -26,10 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
     startButton.id = "start-button";
     gameOptions.append(startButton);
     startButton.addEventListener("click", handleChoosingNextCell)
-
+    startButton.addEventListener("click", startInGameTimer)
   })()
 
-
+  function startInGameTimer(){
+    timerInterval = setInterval(countdownTimer, 1000)
+  }
 
   function handleChoosingNextCell() {
     const activeCellId = generateRandomNumberBetweenOneAndCellCount();
@@ -51,16 +54,39 @@ document.addEventListener("DOMContentLoaded", function() {
       const activeCell = document.getElementById(currentCellId);
       activeCell.className = ""
       handleChoosingNextCell()
+      hideCursorElement()
     }else {
-
-      sendScoreToDb()
-      alert(`You lost the game. Your score is ${currentScore.innerText}.`)
-      clearGridForNewGame()
-      clearScoreForNewGame()
-
+      endGame()
     }
+  }
+  initialTopTenFetch()
+
+  const ingameTimer = document.getElementById('ingame-timer')
+
+  function countdownTimer(){
+    ingameTimer.innerText--
+    if(ingameTimer.innerText <= -1){
+      endGame()
+    }
+  }
+
+  function stopAndResetTimer(){
+    clearInterval(timerInterval)
+    ingameTimer.innerText = 15
+  }
+
+  function endGame(){
+    sendScoreToDb()
+    alert(`You lost the game. Your score is ${currentScore.innerText}.`)
+    clearGridForNewGame()
+    clearScoreForNewGame()
+    stopAndResetTimer()
+  }
+
+  function hideCursorElement(){
+    const gameGrid = document.getElementById('gameGrid')
+    gameGrid.className+= " hide-cursor"
 
   }
 
-  initialTopTenFetch()
 })

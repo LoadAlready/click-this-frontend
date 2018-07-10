@@ -4,6 +4,7 @@ let cellCount;
 function createGrid(gridSize) {
   cellCount = gridSize * gridSize;
   const grid = document.createElement("TABLE");
+  grid.id = "gameGrid"
   grid.className = "grid";
   gridContainer.append(grid);
   let cellId = 1;

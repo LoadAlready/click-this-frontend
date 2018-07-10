@@ -10,6 +10,7 @@ function createScoreboard(topTenScoresJson) {
   let counter = 1;
   topTenScoresJson.forEach( function(topTenElement) {
     const listItem = document.createElement("li")
+    const listItemRow = document.createElement("tr")
     listItem.dataset.scoreId = counter++;
     listItem.innerText = `${topTenElement.username} - ${topTenElement.point_value}`;
     scoreboardList.append(listItem);
