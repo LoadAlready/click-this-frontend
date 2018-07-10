@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let startButton = document.createElement("BUTTON");
     let usernameInputField = document.createElement("INPUT")
     usernameInputField.placeholder = "New User"
+    usernameInputField.id = "username-field"
     gameOptions.append(usernameInputField)
     startButton.innerText = "Start Game";
     startButton.id = "start-button";
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
       handleChoosingNextCell()
     }else {
 
+      sendScoreToDb()
       alert(`You lost the game. Your score is ${currentScore.innerText}.`)
       clearGridForNewGame()
       clearScoreForNewGame()
@@ -60,5 +62,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   }
 
-
+  initialTopTenFetch()
 })
