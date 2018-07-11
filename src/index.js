@@ -20,6 +20,7 @@ initialTopTenFetch();
         const timeTrialMode = new TimeTrialMode;
         timeTrialMode.startTimeTrialMode();
     }
+
   }
 
   function handleChoosingNextCellNormalMode() {
@@ -27,7 +28,7 @@ initialTopTenFetch();
     selectAndStyleActiveCell(activeCellId);
 
   }
-  
+
   function selectAndStyleActiveCell(activeCellId) {
     const activeCell = document.getElementById(activeCellId);
     activeCell.className = 'pulse'
@@ -50,7 +51,6 @@ initialTopTenFetch();
   function endGame(){
     sendScoreToDb()
     alert(`You lost the game. Your score is ${currentScore.innerText}.`)
-    clearGridForNewGame()
     clearScoreForNewGame()
     stopAndResetTimer()
     location.reload();

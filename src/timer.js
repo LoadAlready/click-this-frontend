@@ -5,6 +5,11 @@ function startInGameTimer(){
   timerInterval = setInterval(countdownTimer, 1000)
 }
 
+function addQuarterSecondToTimer(){
+  let currentTimerValue = parseFloat(ingameTimer.innerText) + 0.25
+  ingameTimer.innerText = currentTimerValue.toString()
+}
+
 function countdownTimer(){
   ingameTimer.innerText--
   if(ingameTimer.innerText <= -1){
