@@ -1,5 +1,7 @@
 let currentScore = document.getElementById('current-score');
 let currentCellId;
+initialTopTenFetch();
+gridContainer.addEventListener('click', respondToUserClick);
 
   (function initializeGame(){
     let startButton = document.getElementById("start-button");
@@ -19,7 +21,6 @@ let currentCellId;
     currentCellId = activeCellId
   }
 
-  gridContainer.addEventListener('click', respondToUserClick)
 
   function respondToUserClick(){
     if(parseInt(event.target.id) === currentCellId){
@@ -32,7 +33,6 @@ let currentCellId;
       endGame()
     }
   }
-  initialTopTenFetch()
 
   function endGame(){
     sendScoreToDb()

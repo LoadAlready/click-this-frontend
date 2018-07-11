@@ -1,12 +1,9 @@
 const gridContainer = document.getElementById("grid-container")
+const grid = document.getElementById("gameGrid");
 let cellCount;
 
 function createGrid(gridSize) {
   cellCount = gridSize * gridSize;
-  const grid = document.createElement("TABLE");
-  grid.id = "gameGrid"
-  grid.className = "grid";
-  gridContainer.append(grid);
   let cellId = 1;
   for (var rowCounter = 0; rowCounter < gridSize; rowCounter++) {
     const row  = document.createElement("tr");
