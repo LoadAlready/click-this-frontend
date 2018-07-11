@@ -5,9 +5,16 @@ gridContainer.addEventListener('click', respondToUserClick);
 
   (function initializeGame(){
     let startButton = document.getElementById("start-button");
-    startButton.addEventListener("click", handleChoosingNextCell)
+    startButton.addEventListener("click", startGame)
     startButton.addEventListener("click", startInGameTimer)
   })()
+
+  function startGame() {
+    const inputGridSize = document.getElementById("grid-size-selection").value
+    grid.innerHTML = "";
+    createGrid(parseInt(inputGridSize))
+    handleChoosingNextCell()
+  }
 
   function handleChoosingNextCell() {
     const activeCellId = generateRandomNumberBetweenOneAndCellCount();
