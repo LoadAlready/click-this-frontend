@@ -1,17 +1,21 @@
+.grid-container-div {
+  margin: 2vh 2vw;
+  color: purple;
+}
+
 .grid {
-  margin:5% auto;
+  margin: auto;
+  width: 90vw;
+  height: 90vh;
   border-collapse:collapse ;
   border-style: solid;
   border-color: black;
   border-width: thin;
+  table-layout: auto;
   /* background-color: white; */
 }
 
 .grid td {
-    width: 4em;
-    height: 4em;
-    text-align:center;
-    font-family:sans-serif; font-size:13px;
     border-radius: 5em;
 }
 
@@ -38,8 +42,8 @@
 .pulse {
   /* margin:100px; */
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: radial-gradient(#9EBEFD 5%, #B6FE94 15%, white 60%);
   box-shadow: 0 0 0 rgba(204,169,44, 0.4);

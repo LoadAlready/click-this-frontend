@@ -22,4 +22,4 @@ function clearGridForNewGame(){
   activeCell.className = ""
 }
 
-createGrid(10);
+createGrid(20);
