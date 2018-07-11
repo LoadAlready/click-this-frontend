@@ -20,5 +20,10 @@ function createGrid(gridSize) {
   }
 }
 
+function clearGridForNewGame(){
+  const activeCell = document.getElementById(currentCellId);
+  activeCell.className = ""
+}
+
 
 createGrid(10);
