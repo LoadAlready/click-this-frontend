@@ -5,7 +5,7 @@
 
 .grid {
   margin: auto;
-  width: 90vw;
+  width: 90vh;
   height: 90vh;
   border-collapse:collapse ;
   border-style: solid;
@@ -84,4 +84,8 @@
 
 .hide-cursor {
     cursor: none;
+}
+
+.show-cursor {
+  cursor: crosshair;
 }

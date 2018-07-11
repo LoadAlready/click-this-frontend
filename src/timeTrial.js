@@ -47,6 +47,8 @@ class TimeTrialMode {
       addQuarterSecondToTimer()
       this.deactivateClickedCell(event)
 
+    } else {
+      removeHalfSecondFromTimer()
     }
   }
 

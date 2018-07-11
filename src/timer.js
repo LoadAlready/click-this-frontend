@@ -10,6 +10,11 @@ function addQuarterSecondToTimer(){
   ingameTimer.innerText = currentTimerValue.toString()
 }
 
+function removeHalfSecondFromTimer(){
+  let currentTimerValue = parseFloat(ingameTimer.innerText) - 0.5
+  ingameTimer.innerText = currentTimerValue.toString()
+}
+
 function countdownTimer(){
   ingameTimer.innerText--
   if(ingameTimer.innerText <= -1){
