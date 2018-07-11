@@ -1,7 +1,7 @@
 let currentScore = document.getElementById('current-score');
+let currentMode = document.getElementById('game-mode-selection');
 let currentCellId;
 initialTopTenFetch();
-gridContainer.addEventListener('click', respondToUserClick);
 
   (function initializeGame(){
     let startButton = document.getElementById("start-button");
@@ -13,15 +13,21 @@ gridContainer.addEventListener('click', respondToUserClick);
     const inputGridSize = document.getElementById("grid-size-selection").value
     grid.innerHTML = "";
     createGrid(parseInt(inputGridSize))
-    handleChoosingNextCell()
+    if (currentMode.value === "normal") {
+      handleChoosingNextCellNormalMode()
+      gridContainer.addEventListener('click', respondToUserClick);
+    } else if (currentMode.value === "time-trial") {
+        const timeTrialMode = new TimeTrialMode;
+        timeTrialMode.startTimeTrialMode();
+    }
   }
 
-  function handleChoosingNextCell() {
+  function handleChoosingNextCellNormalMode() {
     const activeCellId = generateRandomNumberBetweenOneAndCellCount();
     selectAndStyleActiveCell(activeCellId);
 
   }
-
+  
   function selectAndStyleActiveCell(activeCellId) {
     const activeCell = document.getElementById(activeCellId);
     activeCell.className = 'pulse'
@@ -34,7 +40,7 @@ gridContainer.addEventListener('click', respondToUserClick);
       currentScore.innerText++
       const activeCell = document.getElementById(currentCellId);
       activeCell.className = ""
-      handleChoosingNextCell()
+      handleChoosingNextCellNormalMode()
       hideCursorElement()
     }else {
       endGame()
@@ -47,4 +53,5 @@ gridContainer.addEventListener('click', respondToUserClick);
     clearGridForNewGame()
     clearScoreForNewGame()
     stopAndResetTimer()
+    location.reload();
   }
