@@ -13,7 +13,13 @@ class TimeTrialMode {
 
 
  handleChoosingNextCell() {
-  const activeCellId = generateRandomNumberBetweenOneAndCellCount();
+  let activeCellId = generateRandomNumberBetweenOneAndCellCount();
+  let activeCell = document.getElementById(`${activeCellId}`)
+
+  while ( this.timeTrialActiveCells.includes(activeCell) ){
+    activeCellId = generateRandomNumberBetweenOneAndCellCount();
+    activeCell = document.getElementById(`${activeCellId}`)
+  }
   this.selectAndStyleActiveCell(activeCellId);
 
 }
@@ -39,9 +45,17 @@ class TimeTrialMode {
     if( this.timeTrialActiveCells.includes(event.target) ){
       this.currentScore.innerText++
       addQuarterSecondToTimer()
+      this.deactivateClickedCell(event)
+
     }
   }
 
+  deactivateClickedCell(event){
+    const clickedCell = event.target
+    const indexOfClickedCell = this.timeTrialActiveCells.indexOf(clickedCell)
+    this.timeTrialActiveCells.splice(indexOfClickedCell, 1)
+    clickedCell.className = ""
+  }
 
 
 }

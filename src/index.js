@@ -53,5 +53,5 @@ initialTopTenFetch();
     alert(`You lost the game. Your score is ${currentScore.innerText}.`)
     clearScoreForNewGame()
     stopAndResetTimer()
-    location.reload();
+    // location.reload();
   }

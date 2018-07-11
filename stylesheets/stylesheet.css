@@ -17,9 +17,10 @@
 
 .grid td {
     border-radius: 5em;
+
 }
 
-.active {
+.pulse {
   background-color: red;
 }
 
@@ -28,18 +29,19 @@
   /* background: radial-gradient(ellipse at center, #7d7e7d 0%,#0e0e0e 100%); */
 }
 
-/* .pulse {
-  margin:100px;
+.testpulse {
+  /* margin:100px; */
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: lightblue url("https://i.stack.imgur.com/frGqG.png") ;
+  background: url("https://i.stack.imgur.com/frGqG.png") ;
   background-size: contain;
-  cursor: none;
-} */
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-.pulse {
+.xxpulse {
   /* margin:100px; */
   display: block;
   width: 100%;
@@ -50,7 +52,7 @@
   animation: pulse .5s infinite;
 }
 
-.pulse:hover {
+/* .pulse:hover {
   animation: pulse .5s infinite;
 }
 
@@ -59,7 +61,7 @@
     -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
   }
   70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      -webkit-box-shadow: 0 0 0 1000px rgba(204,169,44, 0);
   }
   100% {
       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
@@ -78,7 +80,7 @@
       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
-}
+} */
 
 .hide-cursor {
     cursor: none;
