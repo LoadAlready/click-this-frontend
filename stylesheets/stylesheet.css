@@ -15,8 +15,27 @@
   /* background-color: white; */
 }
 
-.grid td {
+.grid td.small {
+  background-color: red;
     border-radius: 5em;
+    width: 8vh;
+    height: 8vh;
+
+}
+
+.grid td.medium {
+  background-color: blue;
+    border-radius: 5em;
+    width: 8vh;
+    height: 8vh;
+
+}
+
+.grid td.large {
+    background-color: green; 
+    border-radius: 5em;
+    width: 8vh;
+    height: 8vh;
 
 }
 

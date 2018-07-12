@@ -1,5 +1,5 @@
 function generateRandomNumberBetweenOneAndCellCount() {
-  return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+  return Math.floor(Math.random() * (20 - 1 + 1)) + 1;
 }
 
 function hideCursorElement(){

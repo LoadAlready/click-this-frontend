@@ -1,6 +1,7 @@
 let currentScore = document.getElementById('current-score');
 let currentMode = document.getElementById('game-mode-selection');
 let bodyDiv = document.querySelector("body");
+let gridSizeSelection = document.getElementById("grid-size-selection");
 let currentCellId;
 let showCursorInterval;
 let hideCursorInterval;
@@ -13,10 +14,8 @@ initialTopTenFetch();
   })()
 
   function startGame() {
-    const inputGridSize = document.getElementById("grid-size-selection").value
-    grid.innerHTML = "";
-    createGrid(parseInt(inputGridSize))
     if (currentMode.value === "normal") {
+      selectGridSizeForCssAndCreate()
       handleChoosingNextCellNormalMode()
       createAndAppendLivesHTML()
       startCursorInterval();
@@ -27,6 +26,18 @@ initialTopTenFetch();
         timeTrialMode.startTimeTrialMode();
     }
 
+  }
+
+  function selectGridSizeForCssAndCreate() {
+    const inputGridSize = document.getElementById("grid-size-selection").value
+    debugger;
+    if (inputGridSize === "10") {
+      createGrid(parseInt(inputGridSize), 'small')
+    } else if (inputGridSize === '15') {
+      createGrid(parseInt(inputGridSize), 'medium')
+    } else if (inputGridSize === '20') {
+      createGrid(parseInt(inputGridSize), 'large')
+    }
   }
 
   function handleChoosingNextCellNormalMode() {

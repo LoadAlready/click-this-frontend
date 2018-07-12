@@ -15,11 +15,9 @@ class TimeTrialMode {
  handleChoosingNextCell() {
   this.activeCellId = generateRandomNumberBetweenOneAndCellCount();
   this.activeCell = document.getElementById(`${this.activeCellId}`)
-  // let cellCheckResults = this.checkCellNotInUseAndNotNextToUsedCell();
   while ( this.checkCellNotInUseAndNotNextToUsedCell() === false ){
     this.activeCellId = generateRandomNumberBetweenOneAndCellCount();
     this.activeCell = document.getElementById(`${this.activeCellId}`)
-    // cellCheckResults = this.checkCellNotInUseAndNotNextToUsedCell();
   }
   this.selectAndStyleActiveCell(this.activeCellId);
 
@@ -37,13 +35,11 @@ checkCellNotInUseAndNotNextToUsedCell() {
 }
 
 checkThatActiveCellIsNotAdjacent(cellId) {
-  // debugger;
   return (cellId !== this.activeCellId + 1 && cellId !== this.activeCellId - 1)
 }
 
 
  selectAndStyleActiveCell(activeCellId) {
-   debugger;
   const activeCell = document.getElementById(activeCellId);
   activeCell.className = 'pulse'
   this.timeTrialActiveCells.push(activeCell);

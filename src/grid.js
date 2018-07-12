@@ -2,7 +2,8 @@ const gridContainer = document.getElementById("grid-container")
 const grid = document.getElementById("gameGrid");
 let cellCount;
 
-function createGrid(gridSize) {
+function createGrid(gridSize, gridSizeClassStyle) {
+  grid.innerHTML = "";
   cellCount = gridSize * gridSize;
   let cellId = 1;
   for (var rowCounter = 0; rowCounter < gridSize; rowCounter++) {
@@ -11,6 +12,7 @@ function createGrid(gridSize) {
     grid.append(row);
     for (var cellCounter = 0; cellCounter < gridSize; cellCounter++) {
       const cell = document.createElement("td");
+      cell.className = `${gridSizeClassStyle}`;
       cell.id = cellId++;
       row.append(cell);
     }
@@ -22,4 +24,4 @@ function clearGridForNewGame(){
   activeCell.className = ""
 }
 
-createGrid(20);
+createGrid(10, 'small');
