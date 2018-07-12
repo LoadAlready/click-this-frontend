@@ -6,13 +6,15 @@
   <body>
     <div id= "main" class= "main">
       <div id= "grid-container" class= "grid-container-div">
-        <div id= "game-stats" class="column">
+        <div id= "game-stats" class="column vertical-align">
+          <p class="title">Click This</p>
+          <p class="scores-title">High Scores</p>
           <ol id= "scoreboard-list"></ol>
           <p id= "current-score">0</p>
-          <p id= "ingame-timer">15</p>
         </div>
         <table id="gameGrid" class="grid column"></table>
-        <div id= "game-options" class="column">
+        <div id= "game-options" class="column vertical-align">
+          <p id= "ingame-timer" class="timer">15</p>
           <input type="text" id="username-field" placeholder="Enter Username"><br>
           <select id="grid-size-selection">
             <option value="10">Small</option>
@@ -28,6 +30,7 @@
       </div>
 
     </div>
+    <div id="sound-div"></div>
   </body>
   <link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
   <script src="src/helpers.js"></script>
@@ -36,5 +39,10 @@
   <script src="src/grid.js"></script>
   <script src="src/timeTrial.js"></script>
   <script src="src/index.js"></script>
+  <script src="src/cell.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+
 
 </html>

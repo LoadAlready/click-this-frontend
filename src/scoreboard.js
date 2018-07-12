@@ -22,8 +22,9 @@ function sendScoreToDb() {
   const currentScore = document.getElementById("current-score");
   const postScoreUrl = 'http://localhost:3000/api/v1/scores/'
   const payload = {
-    username: usernameField.value,
-    point_value: currentScore.innerText
+    username: "asdkajsdsdkakjadsjadkjakdjadakjadj",
+    // username: usernameField.value,
+    point_value: "9999999999999999"
   }
   const configObj = {
     headers: {

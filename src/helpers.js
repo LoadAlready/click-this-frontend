@@ -1,3 +1,5 @@
+let soundDiv = document.getElementById("sound-div");
+
 function generateRandomNumberBetweenOneAndCellCount() {
   return Math.floor(Math.random() * (20 - 1 + 1)) + 1;
 }
@@ -22,4 +24,16 @@ function createAndAppendLivesHTML() {
   let gameStatsDiv = document.getElementById("game-stats");
   gameStatsDiv.append(livesHTML);
   livesHTML.innerText = createLives();
+}
+
+function setUpSound() {
+  let mySound = new Audio("./sounds/correctClickSound.wav")
+  mySound.id = "correctClick"
+  soundDiv.append(mySound)
+}
+
+function playCorrectClickSound() {
+  const mySound = document.getElementById("correctClick");
+  mySound.play();
+
 }

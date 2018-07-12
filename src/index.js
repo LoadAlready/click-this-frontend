@@ -11,6 +11,8 @@ initialTopTenFetch();
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", startGame)
     startButton.addEventListener("click", startInGameTimer)
+    setUpSound()
+    grid.addEventListener("click", playCorrectClickSound);
   })()
 
   function startGame() {
