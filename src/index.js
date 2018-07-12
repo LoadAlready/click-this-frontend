@@ -30,7 +30,6 @@ initialTopTenFetch();
 
   function selectGridSizeForCssAndCreate() {
     const inputGridSize = document.getElementById("grid-size-selection").value
-    debugger;
     if (inputGridSize === "10") {
       createGrid(parseInt(inputGridSize), 'small')
     } else if (inputGridSize === '15') {
