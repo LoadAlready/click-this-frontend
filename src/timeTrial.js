@@ -13,18 +13,37 @@ class TimeTrialMode {
 
 
  handleChoosingNextCell() {
-  let activeCellId = generateRandomNumberBetweenOneAndCellCount();
-  let activeCell = document.getElementById(`${activeCellId}`)
-
-  while ( this.timeTrialActiveCells.includes(activeCell) ){
-    activeCellId = generateRandomNumberBetweenOneAndCellCount();
-    activeCell = document.getElementById(`${activeCellId}`)
+  this.activeCellId = generateRandomNumberBetweenOneAndCellCount();
+  this.activeCell = document.getElementById(`${this.activeCellId}`)
+  // let cellCheckResults = this.checkCellNotInUseAndNotNextToUsedCell();
+  while ( this.checkCellNotInUseAndNotNextToUsedCell() === false ){
+    this.activeCellId = generateRandomNumberBetweenOneAndCellCount();
+    this.activeCell = document.getElementById(`${this.activeCellId}`)
+    // cellCheckResults = this.checkCellNotInUseAndNotNextToUsedCell();
   }
-  this.selectAndStyleActiveCell(activeCellId);
+  this.selectAndStyleActiveCell(this.activeCellId);
 
 }
 
+checkCellNotInUseAndNotNextToUsedCell() {
+  const cellIdsInUse = this.timeTrialActiveCells.map( cell => parseInt(cell.id));
+  if (cellIdsInUse.every(this.checkThatActiveCellIsNotAdjacent, this) === false) {
+    return false;
+  } else if (this.timeTrialActiveCells.includes(this.activeCell)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+checkThatActiveCellIsNotAdjacent(cellId) {
+  // debugger;
+  return (cellId !== this.activeCellId + 1 && cellId !== this.activeCellId - 1)
+}
+
+
  selectAndStyleActiveCell(activeCellId) {
+   debugger;
   const activeCell = document.getElementById(activeCellId);
   activeCell.className = 'pulse'
   this.timeTrialActiveCells.push(activeCell);
