@@ -1,7 +1,8 @@
 const ingameTimer = document.getElementById('ingame-timer')
 let timerInterval;
 
-function startInGameTimer(){
+function startInGameTimer(e){
+  e.preventDefault()
   timerInterval = setInterval(countdownTimer, 1000)
 }
 

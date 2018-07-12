@@ -33,7 +33,8 @@ function setUpSound() {
   soundDiv.append(mySound)
 }
 
-function playCorrectClickSound() {
+function playCorrectClickSound(e) {
+  e.preventDefault()
   const mySound = document.getElementById("correctClick");
   mySound.play();
 

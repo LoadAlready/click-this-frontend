@@ -15,7 +15,8 @@ initialTopTenFetch();
     grid.addEventListener("click", playCorrectClickSound);
   })()
 
-  function startGame() {
+  function startGame(e) {
+    e.preventDefault()
     if (currentMode.value === "normal") {
       selectGridSizeForCssAndCreate()
       handleChoosingNextCellNormalMode()
@@ -27,7 +28,6 @@ initialTopTenFetch();
         const timeTrialMode = new TimeTrialMode;
         timeTrialMode.startTimeTrialMode();
     }
-
   }
 
   function selectGridSizeForCssAndCreate() {
