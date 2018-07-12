@@ -6,7 +6,6 @@ class TimeTrialMode {
   }
 
   startTimeTrialMode() {
-    debugger
   this.handleChoosingNextCell();
   this.startIntervalForActiveCell();
   gridContainer.addEventListener('click', this.timeTrialInGameClickHandler.bind(this));
@@ -57,14 +56,14 @@ checkThatActiveCellIsNotAdjacent(cellId) {
   }
 
   timeTrialInGameClickHandler(){
-    debugger
     if( this.timeTrialActiveCells.includes(event.target) ){
       this.currentScore.innerText++
       addQuarterSecondToTimer()
       this.deactivateClickedCell(event)
 
+    } else if (event.target.id === "start-button"){
+      console.log('=P')
     } else {
-      debugger
       removeHalfSecondFromTimer()
     }
   }

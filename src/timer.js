@@ -1,8 +1,7 @@
 const ingameTimer = document.getElementById('ingame-timer')
 let timerInterval;
 
-function startInGameTimer(e){
-  e.preventDefault()
+function startInGameTimer(){
   timerInterval = setInterval(countdownTimer, 1000)
 }
 
@@ -18,7 +17,7 @@ function removeHalfSecondFromTimer(){
 
 function countdownTimer(){
   ingameTimer.innerText--
-  if(ingameTimer.innerText <= -1){
+  if(ingameTimer.innerText <= 0){
     endGame()
   }
 }

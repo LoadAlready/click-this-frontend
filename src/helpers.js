@@ -1,7 +1,7 @@
 let soundDiv = document.getElementById("sound-div");
 
 function generateRandomNumberBetweenOneAndCellCount() {
-  return Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+  return Math.floor(Math.random() * (cellCount - 1 + 1)) + 1;
 }
 
 function hideCursorElement(){
@@ -33,8 +33,7 @@ function setUpSound() {
   soundDiv.append(mySound)
 }
 
-function playCorrectClickSound(e) {
-  e.preventDefault()
+function playCorrectClickSound() {
   const mySound = document.getElementById("correctClick");
   mySound.play();
 

@@ -15,8 +15,7 @@ initialTopTenFetch();
     grid.addEventListener("click", playCorrectClickSound);
   })()
 
-  function startGame(e) {
-    e.preventDefault()
+  function startGame() {
     if (currentMode.value === "normal") {
       selectGridSizeForCssAndCreate()
       handleChoosingNextCellNormalMode()
