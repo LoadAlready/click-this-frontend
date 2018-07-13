@@ -49,7 +49,6 @@
   min-width: 220px;
   background-color: black;
   padding: 20px;
-  padding-top: 80px;
   box-shadow: inset 0 0 25px #00ff00;
   border-radius: 25px;
 }
@@ -62,6 +61,8 @@
   border-left: transparent;
   border-right: transparent;
   color: #00ff00;
+  min-width: 200px;
+  margin-bottom: 10px;
 }
 
 #username-field:focus {
@@ -98,12 +99,14 @@
   margin-top: -5vh;
   margin-bottom: 5vh;
 }
+.right-side-title {
+  margin-top: 2vh;
+}
 
 .title-bottom {
   font-family: 'Faster One', cursive;
   text-align: center;
   font-size: 2em;
-  padding-top: 100px;
 }
 
 .timer {
@@ -111,7 +114,6 @@
   background-color: black;
   width: 50%;
   margin-top: auto;
-  margin-bottom: 100px;
   font-size: 4em;
 }
 
@@ -132,12 +134,6 @@
 
 .redpulse {
   background-color: red;
-}
-
-
-body {
-  /* background: radial-gradient(ellipse at center, #833f40 0%,#a85251 100%); */
-  background-color: black;
 }
 
 .testpulse {
@@ -223,4 +219,43 @@ body {
 @keyframes marquee {
     0%   { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
+}
+
+.right-side-styling {
+  font-size: 12px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: #00ff00;
+  border-radius: 5px;
+  color: #00ff00;
+  border-width: 3px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: transparent;
+  min-width: 200px;
+}
+
+.right-side-styling :focus{
+  font-size: 12px;
+  padding: 10px;
+  border-style: solid;
+  border-color: #00ff00;
+  color: #00ff00;
+  border-width: 3px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: transparent;
+}
+
+
+#right-side-middle-section {
+  text-align: center;
+}
+
+body {
+  /* background: radial-gradient(ellipse at center, #833f40 0%,#a85251 100%); */
+  background-color: black;
+}
+#username-field::placeholder {
+    color: #00ff00;
+    font-family: 'Press Start 2P';
+
 }

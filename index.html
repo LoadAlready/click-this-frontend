@@ -13,26 +13,30 @@
           <p class="retro-font">Current Score:</p>
           <p id= "current-score" class="retro-font current-score">0</p>
           <p class="retro-font">Extra Lives:</p>
-          <p class="title-bottom">Click This</p>
+          <p class="title-bottom left-title-bottom">Click This</p>
         </div>
         <table id="gameGrid" class="grid column"></table>
         <div id= "game-options" class="column vertical-align">
-          <p class="title">Click This</p>
+          <p class="title right-side-title">Click This</p>
           <p class="scores-title">Time Remaining</p>
           <p id= "ingame-timer" class="timer">15</p>
-          <p id= "game-options-heading" class="scores-title">Game Options</p>
-          <input type="text" id="username-field" placeholder="Enter Username"><br>
-          <select id="grid-size-selection">
-            <option value="10">Small</option>
-            <option value="15">Medium</option>
-            <option value="20">Large</option>
-          </select><br>
-          <select id="game-mode-selection">
-            <option value="normal">Normal Mode</option>
-            <option value="time-trial">Time Trial</option>
-          </select><br>
-          <button id="start-button">Start Game</button>
-          <p class="title-bottom">Click This</p>
+          <div id="right-side-middle-section">
+              <p id= "game-options-heading" class="scores-title">Game Options</p>
+              <input type="text" id="username-field" placeholder="Enter Username"><br>
+              <select id="grid-size-selection" class="right-side-styling">
+                <option disabled selected value="10">Pick Grid Size</option>
+                <option value="10">Small</option>
+                <option value="15">Medium</option>
+                <option value="20">Large</option>
+              </select><br>
+              <select id="game-mode-selection" class="right-side-styling">
+                <option disabled selected value="Time Trial">Pick Game Mode</option>
+                <option value="normal">Normal Mode</option>
+                <option value="time-trial">Time Trial</option>
+              </select><br>
+                <button id="start-button" class="right-side-styling">Start Game</button>
+          </div>
+          <p class="title-bottom right-title-bottom">Click This</p>
         </div>
       </div>
       <div class="marquee">
@@ -52,7 +56,4 @@
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
-
-
-
 </html>
