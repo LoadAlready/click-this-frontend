@@ -3,6 +3,7 @@ const grid = document.getElementById("gameGrid");
 let cellCount;
 
 function createGrid(gridSize, gridSizeClassStyle) {
+  debugger
   grid.innerHTML = "";
   cellCount = gridSize * gridSize;
   let cellId = 1;

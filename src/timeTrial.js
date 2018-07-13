@@ -6,9 +6,21 @@ class TimeTrialMode {
   }
 
   startTimeTrialMode() {
+  this.timeTrialSelectGridSizeForCssAndCreate()
   this.handleChoosingNextCell();
   this.startIntervalForActiveCell();
   gridContainer.addEventListener('click', this.timeTrialInGameClickHandler.bind(this));
+ }
+
+  timeTrialSelectGridSizeForCssAndCreate() {
+   const inputGridSize = document.getElementById("grid-size-selection").value
+   if (inputGridSize === "10") {
+     createGrid(parseInt(inputGridSize), 'small')
+   } else if (inputGridSize === '15') {
+     createGrid(parseInt(inputGridSize), 'medium')
+   } else if (inputGridSize === '20') {
+     createGrid(parseInt(inputGridSize), 'large')
+   }
  }
 
 

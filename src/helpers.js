@@ -19,11 +19,7 @@ function createLives() {
 }
 
 function createAndAppendLivesHTML() {
-  let livesHTML = document.createElement("p");
-  livesHTML.id = "lives-id"
-  livesHTML.className= "retro-font current-score"
-  let gameStatsDiv = document.getElementById("game-stats");
-  gameStatsDiv.append(livesHTML);
+  let livesHTML = document.getElementById("lives-id");
   livesHTML.innerText = createLives();
 }
 

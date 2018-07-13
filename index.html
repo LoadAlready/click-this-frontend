@@ -13,7 +13,8 @@
           <p class="retro-font">Current Score:</p>
           <p id= "current-score" class="retro-font current-score">0</p>
           <p class="retro-font">Extra Lives:</p>
-          <p class="title-bottom left-title-bottom">Click This</p>
+          <p id="lives-id" class="retro-font current-score">0</p>
+
         </div>
         <table id="gameGrid" class="grid column"></table>
         <div id= "game-options" class="column vertical-align">
@@ -22,7 +23,7 @@
           <p id= "ingame-timer" class="timer">15</p>
           <div id="right-side-middle-section">
               <p id= "game-options-heading" class="scores-title">Game Options</p>
-              <input type="text" id="username-field" placeholder="Enter Username"><br>
+              <input type="text" id="username-field" placeholder="Enter Initials" maxlength="3" onfocus="this.placeholder=''"><br>
               <select id="grid-size-selection" class="right-side-styling">
                 <option disabled selected value="10">Pick Grid Size</option>
                 <option value="10">Small</option>
@@ -30,17 +31,16 @@
                 <option value="20">Large</option>
               </select><br>
               <select id="game-mode-selection" class="right-side-styling">
-                <option disabled selected value="Time Trial">Pick Game Mode</option>
-                <option value="normal">Normal Mode</option>
+                <option disabled selected value="time-trial">Pick Game Mode</option>
                 <option value="time-trial">Time Trial</option>
+                <option value="normal">Lives Trial</option>
               </select><br>
                 <button id="start-button" class="right-side-styling">Start Game</button>
           </div>
-          <p class="title-bottom right-title-bottom">Click This</p>
         </div>
       </div>
       <div class="marquee">
-      	<p>Test</p>
+      	<p>Click Start To Practice Your Click Accuracy</p>
       </div>
     </div>
     <div id="sound-div"></div>

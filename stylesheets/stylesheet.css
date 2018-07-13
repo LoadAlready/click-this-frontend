@@ -1,11 +1,19 @@
 .grid-container-div {
-  background-color: grey;
+  /* background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px; */
+  background: radial-gradient(ellipse at center, grey 0%,black 100%);
   max-width: 80vw;
   margin: 0 auto;
   display: flex;
   padding-bottom: 0px;
-  box-shadow: 6px 6px 10px 0px #000fa0;
+  box-shadow: 6px 6px 10px 0px black;
   border-radius: 25px;
+  /* opacity: 0.5; */
 }
 .grid {
   border-radius: 25px;
@@ -53,6 +61,10 @@
   border-radius: 25px;
 }
 
+#game-options-heading {
+    padding-top: 100px;
+}
+
 #username-field {
   background-color: transparent;
   border-bottom: 4px;
@@ -62,13 +74,20 @@
   border-right: transparent;
   color: #00ff00;
   min-width: 200px;
+  max-width: 200px;
   margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 #username-field:focus {
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
+  outline: none;
+}
+#scoreboard-list {
+  margin-left: 25px;
+  min-width: 160px;
 }
 
 .vertical-align {
@@ -113,7 +132,7 @@
   font-family: 'Orbitron', sans-serif;
   background-color: black;
   width: 50%;
-  margin-top: auto;
+  margin: auto;
   font-size: 4em;
 }
 
@@ -252,7 +271,10 @@
 
 body {
   /* background: radial-gradient(ellipse at center, #833f40 0%,#a85251 100%); */
-  background-color: black;
+  /* background-color: black; */
+  background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_286860.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #username-field::placeholder {
     color: #00ff00;
