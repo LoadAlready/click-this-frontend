@@ -19,6 +19,9 @@ function createScoreboard(topTenScoresJson) {
 
 function sendScoreToDb() {
   const usernameField = document.getElementById("username-field");
+  if (usernameField.value === ""){
+    usernameField.value = 'XYZ' 
+  }
   const currentScore = document.getElementById("current-score");
   const postScoreUrl = 'http://localhost:3000/api/v1/scores/'
   const payload = {

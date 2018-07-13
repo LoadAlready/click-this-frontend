@@ -50,7 +50,7 @@ checkThatActiveCellIsNotAdjacent(cellId) {
   }
 
   handleActivatingNextCell(){
-    if (this.timeTrialActiveCells.length < 3){
+    if (this.timeTrialActiveCells.length < 6){
       this.handleChoosingNextCell()
     }
   }

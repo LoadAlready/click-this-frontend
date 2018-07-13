@@ -35,6 +35,7 @@ function setUpSound() {
 
 function playCorrectClickSound() {
   const mySound = document.getElementById("correctClick");
+  mySound.pause();
+  mySound.currentTime = 0;
   mySound.play();
-
 }
